@@ -1,4 +1,15 @@
 <?php
+    session_start();
+    if (empty($_SESSION['akses'])){
+        echo "
+        <script>
+            alert('Mohon Login terlebih dahulu..');
+            window.location.href='../../index.php';
+        </script>
+        ";
+    };
+?>
+<?php
 include '../../functions.php';
 if (isset($_GET['search']) ) {
     $keyword = $_GET['keyword'];
